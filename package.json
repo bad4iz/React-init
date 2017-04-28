@@ -20,9 +20,6 @@
   ],
   "author": "Bad4iz",
   "license": "ISC",
-  "bugs": {
-    "url": ""
-  },
   "homepage": "",
   "devDependencies": {
     "babel-core": "^6.13.2",

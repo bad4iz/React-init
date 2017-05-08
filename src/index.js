@@ -1,31 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Button} from './components/button';
 
 class App extends React.Component {
     
-    handleClick(e) {
-        console.log(e.target);
+    constructor(props) {
+        super(props);
+        
+        this.state = {
+            text: 'ytyf'
+        };
     }
   
     handleChange(e) {
-        console.log(e.target.value);
+        const text = e.target.value;
+        this.setState({ text });
     }
     
     render() {
         return (
-       <div className="demo-card-event mdl-card mdl-shadow--2dp" style={{margin: '100px auto'}}>
-         <div className="mdl-card__title mdl-card--expand">
-           <h1>App Works!</h1>);
-         </div>
-         <div className="mdl-card__actions mdl-card--border">
+       <div className="demo-card-event mdl-card mdl-shadow--2dp" style={{margin: '100px auto', padding: '20px'}}>
+           <h1 style={{margin: ' auto'}}>Прювет !</h1>
            <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-             <input onChange={this.handleChange} className="mdl-textfield__input" type="text" id="sample3"/>
+             <input value={this.state.text} onChange={this.handleChange}  className="mdl-textfield__input" type="text" id="sample3"/>
                <label className="mdl-textfield__label" htmlFor="sample3">Введите текст...</label>
            </div>
-           <button onClick={this.handleClick} className="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
-             Add to Calendar
-           </button>
-         </div>
+           <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+               <p>{this.state.text}</p>
+           </div>
        </div>);
     }
 }

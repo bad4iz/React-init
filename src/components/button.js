@@ -13,6 +13,14 @@ export class Button extends Component {
         btnText: 'нажми на меня'
     };
     
+    componentWillMount() {
+        console.log('Кнопка создана');
+    }
+    
+    componentWillUnmount() {
+        console.log('Кнопка удалена');
+    }
+    
     handleClick(e) {
         console.log(e.target.value);
     }
